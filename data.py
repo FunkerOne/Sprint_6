@@ -16,3 +16,6 @@ class DataKitTwo:
     phone_number = "+71234567890"
     date = "05.09.2024"
     comment = "Текст для комментария 2"
+
+
+MAIN_URL = "https://qa-scooter.praktikum-services.ru/"

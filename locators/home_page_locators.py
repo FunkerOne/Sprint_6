@@ -5,8 +5,6 @@ class HomePageLocators:
     yandex_logo = (By.XPATH, ".//a[@class='Header_LogoYandex__3TSOI']")
     dzen_page = (By.ID, "__SVG_SPRITE_NODE__")
     scooter_logo = (By.XPATH, ".//a[@class='Header_LogoScooter__3lsAR']")
-    order_button_in_header = (By.XPATH, ".//button[@class='Button_Button__ra12g']")
-    order_button = (By.XPATH, ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     cookie_button = (By.ID, 'rcc-confirm-button')
     first_question_button = (By.ID, "accordion__heading-0")
     first_question_text = (By.ID, "accordion__panel-0")

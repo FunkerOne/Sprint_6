@@ -1,5 +1,5 @@
 # Sprint_6
-# Poge Object Model for Yandex Scooter
+# Page Object Model for Yandex Scooter
 `https://qa-scooter.praktikum-services.ru/`
 
 Проверки спроектированны на курсе "Автоматизатор тестирования на Python"

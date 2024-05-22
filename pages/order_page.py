@@ -1,4 +1,3 @@
-from locators.home_page_locators import HomePageLocators
 from locators.order_page_locators import OrderPageLocators
 from selenium.webdriver.common.keys import Keys
 from pages.base_page import BasePage
@@ -8,15 +7,15 @@ import allure
 class OrderPage(BasePage):
     @allure.step('Открытие формы заказа, через кнопку "Заказать" в хедере')
     def order_from_header(self):
-        self.find_element_located_click(HomePageLocators.order_button_in_header)
+        self.find_element_located_click(OrderPageLocators.order_button_in_header)
 
     @allure.step('Открытие формы заказа, через кнопку "Заказать" на домашней странице')
     def order_from_home_page(self):
-        self.find_element_located_click(HomePageLocators.order_button)
+        self.find_element_located_click(OrderPageLocators.order_button)
 
-    @allure.step('Оформление заказа по наборам тестовых данных')
-    def order_scooter(self, first_name, last_name, address, subway_station, phone_number, date, comment):
-        self.find_element_located_click(HomePageLocators.order_button_in_header)
+    @allure.step('Оформление заказа по наборам тестовых данных на первой форме')
+    def order_scooter_first_form(self, first_name, last_name, address, subway_station, phone_number):
+        self.find_element_located_click(OrderPageLocators.order_button_in_header)
         self.find_element_located(OrderPageLocators.first_name_field).send_keys(first_name)
         self.find_element_located(OrderPageLocators.last_name_field).send_keys(last_name)
         self.find_element_located(OrderPageLocators.address_field).send_keys(address)
@@ -26,6 +25,9 @@ class OrderPage(BasePage):
         self.find_element_located(OrderPageLocators.subway_station_field).send_keys(Keys.ENTER)
         self.find_element_located(OrderPageLocators.phone_number_field).send_keys(phone_number)
         self.find_element_located_click(OrderPageLocators.next_button)
+
+    @allure.step('Оформление заказа по наборам тестовых данных на второй форме')
+    def order_scooter_second_form(self, date, comment):
         self.find_element_located(OrderPageLocators.when_delivery_order).send_keys(date)
         self.find_element_located_click(OrderPageLocators.time_rent)
         self.find_element_located_click(OrderPageLocators.today_time_rent)

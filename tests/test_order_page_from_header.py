@@ -17,5 +17,6 @@ class TestOrderPageFromHeader:
         home_page = HomePage(driver)
         home_page.go_to_site("https://qa-scooter.praktikum-services.ru/")
         page.order_from_header()
-        order_from_header_button_complete = page.order_scooter(first_name, last_name, address, subway_station, phone_number, date, comment)
+        page.order_scooter_first_form(first_name, last_name, address, subway_station, phone_number)
+        order_from_header_button_complete = page.order_scooter_second_form(date, comment)
         assert expected_result in order_from_header_button_complete

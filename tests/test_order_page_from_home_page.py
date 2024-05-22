@@ -18,5 +18,6 @@ class TestOrderPageFromHomePage:
         home_page.go_to_site("https://qa-scooter.praktikum-services.ru/")
         home_page.check_cookie()
         page.order_from_home_page()
-        order_from_home_page_button_complete = page.order_scooter(first_name, last_name, address, subway_station, phone_number, date, comment)
+        page.order_scooter_first_form(first_name, last_name, address, subway_station, phone_number)
+        order_from_home_page_button_complete = page.order_scooter_second_form(date, comment)
         assert expected_result in order_from_home_page_button_complete

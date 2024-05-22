@@ -12,6 +12,7 @@ class HomePage(BasePage):
     def jump_after_click_to_yandex_logo(self):
         self.find_element_located_click(HomePageLocators.yandex_logo)
 
+    @allure.step('Клик по кнопке куки')
     def check_cookie(self):
         cookie = self.find_element_located(HomePageLocators.cookie_button)
         if cookie:
@@ -27,5 +28,6 @@ class HomePage(BasePage):
         search_field.click()
         return self.find_element_located(answer).text
 
+    @allure.step('Поиск логотипа "Дзен"')
     def find_dzen_logo(self):
         self.find_element_located(HomePageLocators.dzen_page)
